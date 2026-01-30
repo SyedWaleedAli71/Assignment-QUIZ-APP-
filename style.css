@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 15px;
+}
+
+.container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heading-txt {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6a11cb;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#timer {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #6a11cb;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.question {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.option-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.option-container input {
+  display: none;
+}
+
+.option-container label {
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.option-container label:hover {
+  background: #f0f0ff;
+}
+
+.option-container input:checked + label {
+  background: #6a11cb;
+  color: #fff;
+  border-color: #6a11cb;
+  transform: scale(1.02);
+}
+
+#next-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+#next-button:active {
+  transform: scale(0.97);
+}
+
+/* Result Page */
+#score {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2575fc;
+  margin-top: 20px;
+}

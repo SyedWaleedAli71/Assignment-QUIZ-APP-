@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .restart-btn {
+        margin-top: 20px;
+        padding: 12px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .restart-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--  -->
+    <div class="container">
+      <p class="heading-txt">Your Score Is</p>
+      <h1 id="score"></h1>
+
+      <button class="restart-btn" onclick="restartQuiz()">
+        🔁 Restart Quiz
+      </button>
+    </div>
+
+    <!--  -->
+    <script>
+      var score = localStorage.getItem("score");
+      document.getElementById("score").innerHTML = score;
+
+      function restartQuiz() {
+        localStorage.removeItem("score");
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
